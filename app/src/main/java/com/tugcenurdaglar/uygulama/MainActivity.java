@@ -14,7 +14,8 @@ public class MainActivity extends AppCompatActivity {
     private TextView textView;
     private Button button;
 
-    private Animation animation;
+    private Animation downtoup;
+    private Animation uptodown;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,9 +26,12 @@ public class MainActivity extends AppCompatActivity {
         textView = findViewById(R.id.textView);
         button = findViewById(R.id.button);
 
-        animation = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.downtoup);
+        downtoup = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.downtoup);
+        uptodown = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.uptodown);
 
-        button.setAnimation(animation);
+        button.setAnimation(downtoup);
+        imageView.setAnimation(uptodown);
+        textView.setAnimation(uptodown);
 
 
     }
