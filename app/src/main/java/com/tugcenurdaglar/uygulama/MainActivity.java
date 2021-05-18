@@ -3,6 +3,7 @@ package com.tugcenurdaglar.uygulama;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
@@ -32,6 +33,15 @@ public class MainActivity extends AppCompatActivity {
         button.setAnimation(downtoup);
         imageView.setAnimation(uptodown);
         textView.setAnimation(uptodown);
+
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                button.startAnimation(downtoup);
+                imageView.startAnimation(uptodown);
+                textView.startAnimation(uptodown);
+            }
+        });
 
 
     }
