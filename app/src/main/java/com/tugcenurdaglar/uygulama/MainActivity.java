@@ -20,6 +20,9 @@ public class MainActivity extends AppCompatActivity {
 
     private Animation righttoleft;
     private Animation lefttoright;
+
+    private Animation updowninfinite;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,9 +38,11 @@ public class MainActivity extends AppCompatActivity {
         righttoleft = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.righttoleft);
         lefttoright = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.lefttoright);
 
-        button.setAnimation(lefttoright);
-        imageView.setAnimation(lefttoright);
-        textView.setAnimation(righttoleft);
+        updowninfinite = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.updowninfinite);
+
+//        button.setAnimation(lefttoright);
+        imageView.setAnimation(updowninfinite);
+//        textView.setAnimation(righttoleft);
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
